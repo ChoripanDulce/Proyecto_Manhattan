@@ -20,11 +20,65 @@
         <h1>Red Comunitaria de Emprendimientos</h1>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
             <div class="container">
-                <a class="navbar-brand" href="#">Mi Sitio</a>
+                <a class="navbar-brand" href="#" class="MiSitio"  >Mi Sitio</a>
                 <!-- Resto del menú como en ejemplos anteriores -->
+                 <style>
+                    .MiSitio {
+                        font-size: 24px;
+                        font-family: 'Montserrat', sans-serif;
+                        text-align: left;
+                    }
+                 </style>
             </div>
         </nav>
     </header>
+    <section >
+        <div class="image-container">
+            <img src="pexels-juan-tapias-695500451-29559796.jpg" alt="Imagen de fondo" class="img-fluid">
+            <div class="overlay"></div>
+            <div class="text-overlay">
+              <h1 class="">Bienvenido a la Red Comunitaria de Emprendimientos</h1>
+              <p>Juntos transformaremos Caldas</p>
+            </div>
+          </div>
+        <div class="text-overlay" class="Informacion"></div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>¿Qué es la Red Comunitaria?</h2>
+                    <p>La Red Comunitaria de Emprendimientos es una iniciativa que busca conectar a emprendedores locales para fomentar el desarrollo económico y social de nuestra comunidad.</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>¿Cómo funciona?</h2>
+                    <p>A través de talleres, eventos y plataformas digitales, facilitamos la colaboración entre emprendedores, compartiendo recursos y conocimientos.</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Únete a nosotros</h2>
+                    <p>Si eres un emprendedor o quieres apoyar a la comunidad, ¡únete a nuestra red! Juntos podemos hacer la diferencia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        .image-container {
+            position: relative;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+        }
+        .text-overlay {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
+    </style>
 </body>
 
 </html>
