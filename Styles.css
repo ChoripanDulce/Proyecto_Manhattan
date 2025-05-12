@@ -1,3 +1,41 @@
-.row{
-    margin: 10px 10px; /* vertical horizontal */
+.row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent overlay */
+  }
+
+  .text-overlay {
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(181, 181, 181);
+    width: 70%;
+    text-align: center;
+  }
+
+  .col {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .col h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .col p {
+    font-size: 1rem;
+  }
+  

@@ -1,124 +1,312 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Red Comunitaria de Emprendimientos</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red Comunitaria</title>
     <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
-    <!-- Style con css -->
-    <link rel="stylesheet" href="Styles.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos externos -->
+    <link rel="stylesheet" href="Styles.css" />
 
     <style>
-        /* Estilos para el título principal */
-        .Titulo {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            /* Tamaño responsivo */
-            font-weight: 450;
-            margin-bottom: 1rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-            /* Sombra para mejor legibilidad */
-        }
+      /* Estilos generales */
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
 
-        /* Estilos para las columnas de contenido */
-        .row {
-            padding: 60px 20px;
-            /* Espaciado vertical y horizontal */
-        }
+      /* Estilos para el título principal */
+      .titulo-principal {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 450;
+        margin-bottom: 1rem;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+      }
 
-        .col {
-            padding: 20px;
-            /* Espaciado interno en columnas */
-        }
+      /* Estilos para las secciones */
+      .seccion-contenido {
+        padding: 60px 20px;
+      }
+
+      .columna-contenido {
+        padding: 20px;
+      }
+
+      /* Estilos para contenedores de imagen */
+      .contenedor-imagen {
+        position: relative;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .texto-overlay {
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        color: white;
+        text-align: center;
+        width: 80%;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+      }
+
+      /* Estilos para el navbar */
+      .navbar-custom {
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Estilos para subtítulos */
+      .subtitulo {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .cuadro-transparente {
+        background-color: rgba(0, 0, 0, 0.6); /* Fondo medio transparente */
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .cuadro-transparente h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      .cuadro-transparente p {
+        font-size: 1rem;
+      }
+
+      .container {
+        margin-top: 150px; /* Baja los cuadros para que el título sea visible */
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <div>
-        <header> <!-- Cabecera, "panel superior" -->
-            <h1 class="text-secondary">Red Comunitaria De Emprendimientos</h1>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-secondary sticky-top">
-                <div class="container">
-                    <a class="navbar-brand" href="#" class="MiSitio">Mi Sitio</a>
+  <body>
+    <!-- Cabecera -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container-fluid">
+          <div class="d-flex align-items-center justify-content-start">
+            <span class="me-2">
+              <i class="fa-solid fa-house text-dark"></i>
+            </span>
+            <a class="navbar-brand text-dark" href="#">Red Comunitaria</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+      <!-- Sección Hero -->
+      <section class="contenedor-imagen">
+        <img
+          src="pexels-juan-tapias-695500451-29559796.jpg"
+          alt="Emprendedores trabajando"
+          class="img-fluid w-100"
+        />
+        <div class="overlay"></div>
+        <div class="texto-overlay">
+          <h1 class="titulo-principal">
+            Bienvenido a la Red Comunitaria De Emprendimientos
+          </h1> 
+          <p class="subtitulo">Juntos transformaremos Caldas</p> <br>
+
+
+          <!-- Contenido agregado -->
+          <div class="mt-4">
+            <h2 class="mb-4">¿Qué te ofrecemos como parte de la red?</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <i class="fa-solid fa-chalkboard-user fa-2x mb-3 text-light"></i>
+                <h5>Talleres de capacitación</h5>
+                <p>
+                  Aprende sobre modelos de negocio, innovación, mercadeo y herramientas
+                  digitales.
+                </p>
+              </div>
+              <div class="col-md-4">
+                <i class="fa-solid fa-people-group fa-2x mb-3 text-light"></i>
+                <h5>Red de contactos</h5>
+                <p>
+                  Conecta con otros emprendedores, alianzas y redes de apoyo locales.
+                </p>
+              </div>
+              <div class="col-md-4">
+                <i class="fa-solid fa-handshake-angle fa-2x mb-3 text-light"></i>
+                <h5>Acompañamiento</h5>
+                <p>
+                  Te guiamos con asesoría para que tu proyecto crezca de forma
+                  sostenible.
+                </p>
+                
+              </div>
+              
+            </div>
+          <!-- Cuadros medio transparentes -->
+          <div class="container mt-5">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <div class="cuadro-transparente" style="animation: latir 2s ease infinite;">
+                  <h3 class="text-light">¿Qué significa emprender?</h3>
+                  <p class="text-light">
+                    Es la capacidad y disposición de una persona para identificar
+                    oportunidades, asumir riesgos y crear soluciones innovadoras
+                    que generen valor económico, social o cultural mediante la
+                    creación de nuevas empresas o iniciativas. "En Colombia, el
+                    emprendimiento se reconoce como un motor de desarrollo
+                    económico, generador de empleo y promotor de la
+                    inclusión social."
+                  </p> 
                 </div>
-            </nav>
-        </header>
+              </div>
 
-
-
-        <main>
-            <section>
-                <div class="image-container" class="container mt-3">
-                    <img src="pexels-juan-tapias-695500451-29559796.jpg" alt="Imagen de fondo" class="img-fluid">
-                    <div class="overlay"></div>
-                    <div class="text-overlay">
-                        <h1 class="Titulo">Bienvenido a la Red Comunitaria De Emprendimientos</h1>
-                        <p>Juntos transformaremos Caldas</p>
-
-
-
-                    </div>
+              <div class="col-md-4">
+                <div class="cuadro-transparente">
+                  <h3 class="text-light">¿Qué es innovación?</h3>
+                  <p class="text-light"> <br>
+                    Es la introducción de novedades o mejoras significativas en
+                    productos, procesos, servicios o modelos de negocio, que
+                    aumentan la eficiencia, el valor y la competitividad. "La
+                    innovación impulsa el desarrollo tecnológico y económico al
+                    permitir adaptarse a cambios del entorno y aprovechar nuevas
+                    oportunidades."
+                  </p> <br>
                 </div>
+              </div>
 
-
-            </section>
-
-
-            <section>
-                <div class="row"> <!-- Crear las columnas -->
-                    <div class="col"> <!-- Columna automática -->
-                        <h2>¿Qué es la Red Comunitaria?</h2>
-                        <p>La Red Comunitaria de Emprendimientos es una iniciativa que busca conectar a emprendedores
-                            locales
-                            para fomentar el desarrollo económico y social de nuestra comunidad.</p>
-                    </div>
-                    <div class="col"> <!-- Columna automática -->
-                        <h2>¿Cómo funciona?</h2>
-                        <p>A través de talleres, eventos y plataformas digitales, facilitamos la colaboración entre
-                            emprendedores, compartiendo recursos y conocimientos.</p>
-                    </div>
-                    <div class="col"> <!-- Columna automática -->
-                        <h2>Únete a nosotros</h2>
-                        <p>Si eres un emprendedor o quieres apoyar a la comunidad, ¡únete a nuestra red! Juntos podemos
-                            hacer la
-                            diferencia.</p>
-                    </div>
-
-                    <style>
-                        .image-container {
-                            position: relative;
-                        }
-
-                        .overlay {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            right: 0;
-                            bottom: 0;
-                            background-color: rgba(0, 0, 0, 0.5);
-                            /* Semi-transparent overlay */
-                        }
-
-                        .text-overlay {
-                            position: absolute;
-                            top: 20%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            color: white;
-                            text-align: center;
-                        }
-                    </style>
+              <div class="col-md-4">
+                <div class="cuadro-transparente">
+                  <h3 class="text-light">Links de apoyo</h3> <br> 
+                  <p class="text-light">
+                    <nav>
+                      <a
+                        class="text-white"
+                        target="_blank"
+                        href="https://www.wipo.int/es/web/global-innovation-index"
+                        >Global Innovation Index</a 
+                      >
+                      <br /> <br> <br>
+                      <a  
+                        class="text-white"
+                        target="_blank"
+                        href="https://datosabiertos.bogota.gov.co/"
+                        >Datos Abiertos Bogotá</a
+                      >
+                      <br /> <br> <br>
+                      <a 
+                        class="text-white"
+                        target="_blank"
+                        href="https://www.mipymes.gov.co/"
+                        >Mipymes Colombia</a
+                      ><br> <br>
+                    </nav>
+                  </p>
                 </div>
-            </section>
-        </main>
+              </div>
+            </div>
+          </div>
+          <!-- Fin de los cuadros -->
+        </div>
+      </section>
 
-    </div>
+      <!-- Sección Información -->
+      <section class="contenedor-imagen">
+        <img
+          src="pexels-chriispr-2884864.jpg"
+          alt="Comunidad trabajando junta"
+          class="img-fluid w-100"
+        />
+        <div class="overlay"></div>
+        <div class="texto-overlay">
+          <div class="row">
+            <!-- Columna 1 -->
+            <div class="col-md-4 columna-contenido">
+              <h3 class="fw-bold mb-3">¿Qué es la Red Comunitaria?</h3>
+              <p>
+                La Red Comunitaria de Emprendimientos es una iniciativa que
+                busca conectar a emprendedores locales para fomentar el
+                desarrollo económico y social de nuestra comunidad.
+              </p>
+            </div>
 
-</body>
+            <!-- Columna 2 -->
+            <div class="col-md-4 columna-contenido">
+              <h3 class="fw-bold mb-3">¿Cómo funciona?</h3>
+              <p>
+                A través de talleres, eventos y plataformas digitales,
+                facilitamos la colaboración entre emprendedores, compartiendo
+                recursos y conocimientos.
+              </p>
+            </div>
 
+            <!-- Columna 3 -->
+            <div class="col-md-4 columna-contenido">
+              <h3 class="fw-bold mb-3">Únete a nosotros</h3>
+              <p>
+                Si eres un emprendedor o quieres apoyar a la comunidad, ¡únete a
+                nuestra red! Juntos podemos hacer la diferencia.
+              </p>
+            </div>
+          </div>
+
+          <!-- Nueva fila con imágenes en blanco -->
+          <div class="row mt-4">
+            <div class="col-md-4 text-center">
+              <img
+                src="Imagen de WhatsApp 2025-05-12 a las 17.55.29_cef95bdf.jpg"
+                alt="Imagen 1"
+                class="img-fluid rounded"
+              />
+            </div>
+            <div class="col-md-4 text-center">
+              <img
+                src="Imagen de WhatsApp 2025-05-12 a las 17.52.13_c173884b.jpg"
+                alt="Imagen 2"
+                class="img-fluid rounded"
+              />
+            </div>
+            <div class="col-md-4 text-center">
+              <img
+                src="Imagen de WhatsApp 2025-05-12 a las 17.53.24_1f23bb5e.jpg"
+                alt="Imagen 3"
+                class="img-fluid rounded"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
