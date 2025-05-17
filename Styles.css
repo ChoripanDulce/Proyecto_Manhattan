@@ -38,7 +38,20 @@
   .col p {
     font-size: 1rem;
   }
-  .imagen3{
-    
-  }
-  
+.logo {
+    width: 50px;       /* Ancho fijo */
+    height: auto;      /* Altura automática (para mantener proporción) */
+}
+
+.cuadro-transparente {
+    min-height: 400px;  /* Altura mínima fija (ajusta el valor según necesites) */
+    display: flex;      /* Habilita flexbox */
+    flex-direction: column; /* Organiza el contenido en columna */
+    justify-content: center; /* Centra verticalmente el contenido */
+}
+
+.cuadro-transparente p {
+    overflow: auto;     /* Añade scroll si el texto es muy largo */
+    max-height: 200px;  /* Altura máxima para el párrafo (opcional) */
+    padding: 0 10px;    /* Espaciado interno para mejor legibilidad */
+}
