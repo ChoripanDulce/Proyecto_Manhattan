@@ -37,7 +37,7 @@
     }
 
     .texto-overlay {
-      position: fixed;
+      position: absolute;
       top: 10%;
       left: 50%;
       transform: translate(-50%, 0);
@@ -51,6 +51,7 @@
       background-color: white;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+
     .titulo-principal {
       font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: 450;
@@ -58,11 +59,30 @@
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
       position: relative;
     }
+
+    .cuadro-transparente {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      min-height: 230px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Para que todas las columnas tengan la misma altura */
+    .row-equal>[class^="col-"] {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
   </style>
 </head>
 
 <body>
-   <!-- Cabecera -->
+  <!-- Cabecera -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
       <div class="container-fluid">
@@ -90,16 +110,62 @@
   <main>
     <section class="contenedor-imagen">
       <!-- Cambia el src por la imagen de fondo que desees -->
-      <img src="pexels-brcunel-32094623.jpg" alt="Fondo formulario" class="img-fluid w-100" />
+      <img src="pexels-brcunel-32094623.jpg" alt="Fondo información" class="img-fluid w-100" />
       <div class="overlay"></div>
-      <div class="texto-overlay mt-5">
-         <br><h1 class="titulo-principal">Aqui Puedes Encontrar Informacion relevante</h1>
+      <div class="texto-overlay">
+        <h1 class="titulo-principal mb-5">Información relevante para emprendedores</h1>
+        
+        <!-- Sección para imagen centrada -->
+        <div class="d-flex justify-content-center mb-4">
+          <a href="" target="_blank">
+            <img src="pexels-tima-miroshnichenko-6694543.jpg" alt="Imagen informativa" class="img-fluid rounded" style="max-width:800px; max-height:400px; object-fit:cover;">
+          </a>
+        </div>
+        
+        <div class="container">
+          <div class="row row-equal justify-content-center">
+            <!-- Primera fila: 2 cuadros -->
+            <div class="col-md-6 mb-4 d-flex">
+              <div class="cuadro-transparente flex-fill">
+                <h3 class="text-light">Título 1</h3>
+                <p class="text-light">Aquí puedes poner tu información.</p>
+                <div class="mt-3">
+                  <a href="#" class="text-info" target="_blank">Agregar link</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 d-flex">
+              <div class="cuadro-transparente flex-fill">
+                <h3 class="text-light">Título 2</h3>
+                <p class="text-light">Aquí puedes poner tu información.</p>
+                <div class="mt-3">
+                  <a href="#" class="text-info" target="_blank">Agregar link</a>
+                </div>
+              </div>
+            </div>
+            <!-- Segunda fila: 2 cuadros -->
+            <div class="col-md-6 mb-4 d-flex">
+              <div class="cuadro-transparente flex-fill">
+                <h3 class="text-light">Título 3</h3>
+                <p class="text-light">Aquí puedes poner tu información.</p>
+                <div class="mt-3">
+                  <a href="#" class="text-info" target="_blank">Agregar link</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4 d-flex">
+              <div class="cuadro-transparente flex-fill">
+                <h3 class="text-light">Título 4</h3>
+                <p class="text-light">Aquí puedes poner tu información.</p>
+                <div class="mt-3">
+                  <a href="#" class="text-info" target="_blank">Agregar link</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-    <div class="col-md-4">
-      
-
-    </div>
   </main>
 
   <footer class="Josemiel background-color #727579">
