@@ -270,7 +270,6 @@
               desarrollo económico y social de nuestra comunidad.
             </p>
           </div>
-
           <!-- Columna 2 -->
           <div class="col-md-4 columna-contenido">
             <h3 class="fw-bold mb-3">¿Cómo funciona?</h3>
@@ -280,7 +279,6 @@
               recursos y conocimientos.
             </p>
           </div>
-
           <!-- Columna 3 -->
           <div class="col-md-4 columna-contenido">
             <h3 class="fw-bold mb-3">Únete a nosotros</h3>
@@ -290,7 +288,6 @@
             </p>
           </div>
         </div>
-
         <!-- Nueva fila con imágenes en blanco -->
         <div class="row mt-4">
           <div class="col-md-4 text-center">
@@ -308,10 +305,25 @@
         </div>
       </div>
     </section>
-    <section class="contenedor-imagen">
+
+    <!-- Sección Gráfica Animada -->
+    <section class="contenedor-imagen" style="position:relative;">
       <img src="pexels-alba-anguela-3352180-5013938.jpg" alt="Formulario" class="imagen3 img-fluid w-100">
       <div class="overlay"></div>
-      <div class="texto-overlay"></div>
+      <div class="texto-overlay" style="position:absolute;top:5%;left:50%;transform:translate(-50%,0);width:90%;">
+        <h2 class="fw-bold mb-4" style="color:white; text-shadow:1px 1px 3px rgba(0,0,0,0.8);">
+          Evolución del Índice Global de Innovación en Colombia (2008-2021)
+        </h2>
+        <br><br><br>
+        <!-- Aquí se insertará la gráfica animada -->
+        <div id="grafica-animada" style="background:rgba(255,255,255,0.85); border-radius:12px; padding:20px; display:inline-block;">
+          <!-- El canvas de matplotlib se insertará aquí -->
+          <img src="grafica_colombia.gif" alt="Gráfica animada Colombia" class="img-fluid" style="max-width:700px;">
+        </div>
+        <br> <br>
+        <p class="mt-3 text-whiteS" style="font-size:1rem; color: white;">
+          Fuente: Global Innovation Index
+        </p>
       </div>
     </section>
   </main>
