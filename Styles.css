@@ -44,14 +44,12 @@
 }
 
 .cuadro-transparente {
-    min-height: 400px;  /* Altura mínima fija (ajusta el valor según necesites) */
-    display: flex;      /* Habilita flexbox */
+    min-height: 300px;  /* Altura mínima fija (ajusta el valor según necesites) */
+
     flex-direction: column; /* Organiza el contenido en columna */
     justify-content: center; /* Centra verticalmente el contenido */
 }
 
 .cuadro-transparente p {
-    overflow: auto;     /* Añade scroll si el texto es muy largo */
-    max-height: 200px;  /* Altura máxima para el párrafo (opcional) */
     padding: 0 10px;    /* Espaciado interno para mejor legibilidad */
 }
