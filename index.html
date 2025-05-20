@@ -102,7 +102,8 @@
     }
 
     .Josemiel {
-      background-color: #C7C8CA;
+      background-color: rgb(163, 165, 167) !important;
+
     }
 
     .footer {
@@ -110,7 +111,7 @@
     }
 
     .Autores {
-      text-align: center;
+      text-align: left;
     }
 
     .Copyright {
@@ -124,6 +125,15 @@
       /* Alto de 50 píxeles */
       border: 1px solid black;
       /* Borde para que se vea el cuadro */
+    }
+
+    .Autores2 {
+      vertical-align: middle;
+      /* position: absolute; */
+    }
+    .center{
+      text-align: center;
+      align-content: center;
     }
   </style>
 </head>
@@ -338,11 +348,38 @@
     </section>
   </main>
 
+  
   <footer class=" Josemiel">
-    <h2 class="footer">"Aqui va el footer"</h2>
-    <h4 class="Autores fw-bold mb-3">Juan Manuel Torres Villota es gay <br> Julian Andres Bedoya Toro <br> Mateo Crespo
-      Ciro</h4>
-    <h5 class="Copyright fw-bold">&copy; 2025 Red Comunitaria/Talento Tech</h5>
+    <div class="row">
+      
+      <div class="col-md-4">
+        <h5 class="Titulo-autores fw-bold">Autores: <br></h5>
+        <h5 class="Autores">Juan Manuel Torres Villota</h5>
+        <i class="fa-brands fa-instagram target blank"> </i>
+        <a href="https://www.instagram.com/chopan_dulce/" target="_blank">instagram</a> <br>
+        <i class="fa-brands fa-github"></i>
+        <a href="https://github.com/ChoripanDulce" target="_blank">Github</a>
+  
+      </div>
+        <div class="col-md-4">
+          <h5 class="Autores2">Julian Andres Bedoya Toro</h5>
+          <i class="fa-brands fa-instagram target blank"> </i>
+          <a href="https://www.instagram.com/chopan_dulce/" target="_blank">instagram</a>
+        </div>
+
+        <div class="col-md-4">
+          <h5 class="Autores2">Mateo Restrepo Ciro</h5>
+          <i class="fa-brands fa-instagram target blank"> </i>
+          <a href="https://www.instagram.com/chopan_dulce/" target="_blank">instagram</a>
+        </div>
+  
+  
+  
+  
+        <h5 class="Copyright fw-bold mt-5">&copy; 2025 Red Comunitaria/Talento Tech</h5>
+  
+      
+    </div>
 
   </footer>
 

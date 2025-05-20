@@ -19,43 +19,151 @@
   <link rel="stylesheet" href="Styles.css" />
 
   <style>
-    body {
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
       font-family: "Montserrat", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #f5f6fa;
+    }
+
+    main {
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
 
     .contenedor-imagen {
       position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+    }
+
+    .contenedor-imagen img.img-fondo {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      min-height: 100vh;
     }
 
     .overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background-color: rgba(0, 0, 0, 0.5);
+      z-index: 2;
     }
 
     .texto-overlay {
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      transform: translate(-50%, 0);
-      color: white;
-      text-align: center;
-      width: 80%;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      min-height: 100vh;
     }
 
-    .navbar-custom {
-      background-color: white;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .test-container {
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2rem;
+      background: rgba(255,255,255,0.92);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      font-family: 'Segoe UI', sans-serif;
+      backdrop-filter: blur(2px);
+    }
+
+    .question-card {
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      border-left: 4px solid #3498db;
+      background: #f8f9fa;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .question-card:hover {
+      transform: translateX(10px);
+    }
+
+    .question-text {
+      color: #2c3e50;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 1.1em;
+    }
+
+    .option-label {
+      display: block;
+      margin: 0.5rem 0;
+      padding: 0.8rem;
+      background: #e9ecef;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .option-label:hover {
+      background: #3498db;
+      color: white;
+    }
+
+    #resultado {
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+      text-align: center;
+      display: none;
+    }
+
+    .btn-calcular {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      cursor: pointer;
+      display: block;
+      margin: 2rem auto;
+      font-size: 1.1em;
+      transition: transform 0.3s;
+    }
+
+    .btn-calcular:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      flex-shrink: 0;
+      background: #727579;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 0 1rem 0;
+      margin-top: 0;
+    }
+    .footer, .Autores, .Copyright {
+      color: #fff;
     }
   </style>
 </head>
 
 <body>
-    <!-- Cabecera -->
+  <!-- Cabecera -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
       <div class="container-fluid">
@@ -82,23 +190,16 @@
   <!-- Contenido principal -->
   <main>
     <section class="contenedor-imagen">
-      <!-- Cambia el src por la imagen de fondo que desees -->
-      <img src="pexels-apunto-group-agencia-de-publicidad-53086916-7752878.jpg" alt="Fondo formulario" class="img-fluid w-100" />
+      <!-- Imagen de fondo -->
+      <img src="pexels-apunto-group-agencia-de-publicidad-53086916-7752878.jpg" alt="Fondo formulario" class="img-fondo" />
       <div class="overlay"></div>
       <div class="texto-overlay">
-        <h1 class="titulo-principal">Mide tu capacidad de emprendimiento</h1>
-        <p class="subtitulo">Aquí podrás poner tu formulario</p>
-        <!-- Aquí puedes agregar tu formulario -->
-        <!-- EJEMPLO:
-        <form>
-          ...
-        </form>
-        -->
+        <div class="test-container" id="testContainer"></div>
       </div>
     </section>
   </main>
 
-  <footer class="Josemiel background-color #727579">
+  <footer>
     <h2 class="footer">"Aqui va el footer"</h2>
     <h4 class="Autores fw-bold mb-3">Juan Manuel Torres Villota <br> Julian Andres Bedoya Toro <br> Mateo Crespo Ciro</h4>
     <h5 class="Copyright fw-bold mb-3">&copy; 2025 Red Comunitaria/Talento Tech</h5>
@@ -106,5 +207,143 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Configuración de preguntas
+    const preguntas = [
+      {
+        pregunta: "1. ¿Has identificado un problema específico que tu negocio resolverá?",
+        opciones: ["No", "Tengo una idea general", "Sí, muy específico"]
+      },
+      {
+        pregunta: "2. ¿Conoces los requisitos legales básicos para empresas en Colombia?",
+        opciones: ["No", "Algunos", "Sí, en detalle"]
+      },
+      {
+        pregunta: "3. ¿Tienes estimado el capital inicial necesario?",
+        opciones: ["No", "Aproximado", "Sí, con desglose"]
+      },
+      {
+        pregunta: "4. ¿Has analizado a tu competencia directa?",
+        opciones: ["No", "Superficialmente", "Análisis completo"]
+      },
+      {
+        pregunta: "5. ¿Tienes definido tu modelo de ingresos?",
+        opciones: ["No", "En desarrollo", "Totalmente definido"]
+      },
+      {
+        pregunta: "6. ¿Manejas herramientas digitales básicas?",
+        opciones: ["No", "Algunas", "Sí, avanzadas"]
+      },
+      {
+        pregunta: "7. ¿Conoces los programas de apoyo a emprendedores?",
+        opciones: ["No", "1-2 programas", "Sí, varios"]
+      },
+      {
+        pregunta: "8. ¿Has realizado proyecciones financieras a 1 año?",
+        opciones: ["No", "En proceso", "Sí, detalladas"]
+      },
+      {
+        pregunta: "9. ¿Tienes experiencia en el sector de tu negocio?",
+        opciones: ["No", "Alguna", "Más de 2 años"]
+      },
+      {
+        pregunta: "10. ¿Cuentas con un plan de marketing inicial?",
+        opciones: ["No", "Básico", "Completo"]
+      }
+    ];
+
+    // Generar formulario dinámicamente
+    function crearFormulario() {
+      const container = document.getElementById('testContainer');
+      let html = '<h1 style="text-align: center; color: #2c3e50;">Test de Emprendimiento 🇨🇴</h1>';
+
+      preguntas.forEach((pregunta, index) => {
+        html += `
+          <div class="question-card">
+            <div class="question-text">${pregunta.pregunta}</div>
+            <div class="opciones" id="pregunta${index + 1}">
+              ${pregunta.opciones.map((opcion, i) => `
+                <label class="option-label">
+                  <input type="radio" name="q${index + 1}" value="${i}">
+                  ${opcion}
+                </label>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      });
+
+      html += `
+        <button class="btn-calcular" onclick="calcularResultado()">Ver mi resultado</button>
+        <div id="resultado"></div>
+      `;
+
+      container.innerHTML = html;
+    }
+
+    // Calcular puntaje
+    function calcularResultado() {
+      const totalPreguntas = preguntas.length;
+      let puntaje = 0;
+
+      preguntas.forEach((_, index) => {
+        const selected = document.querySelector(`input[name="q${index + 1}"]:checked`);
+        if (selected) puntaje += parseInt(selected.value) + 1;
+      });
+
+      mostrarResultado(puntaje, totalPreguntas * 3);
+    }
+
+    // Mostrar resultado
+    function mostrarResultado(puntaje, max) {
+      const resultado = document.getElementById('resultado');
+      let mensaje = '';
+
+      const porcentaje = (puntaje / max) * 100;
+
+      if (porcentaje <= 40) {
+        mensaje = `
+          <h2 style="color: #e74c3c;">🚧 Necesitas preparación</h2>
+          <p>Falta estructura en aspectos clave. Enfócate en:</p>
+          <ul style="text-align: left; list-style: none;">
+            <li>📌 Investigación de mercado</li>
+            <li>📌 Formalización legal</li>
+            <li>📌 Plan financiero</li>
+          </ul>
+        `;
+        resultado.style.background = '#fdecea';
+      } else if (porcentaje <= 70) {
+        mensaje = `
+          <h2 style="color: #f39c12;">✨ Buen potencial</h2>
+          <p>Refuerza:</p>
+          <ul style="text-align: left; list-style: none;">
+            <li>📈 Modelo de ingresos</li>
+            <li>📈 Estrategia digital</li>
+            <li>📈 Proyecciones realistas</li>
+          </ul>
+        `;
+        resultado.style.background = '#fcf4dd';
+      } else {
+        mensaje = `
+          <h2 style="color: #27ae60;">🚀 ¡Listo para comenzar!</h2>
+          <p>Tu preparación es sólida. Acciones recomendadas:</p>
+          <ul style="text-align: left; list-style: none;">
+            <li>✅ Validar con MVP</li>
+            <li>✅ Buscar financiación</li>
+            <li>✅ Networking empresarial</li>
+          </ul>
+        `;
+        resultado.style.background = '#e8f6ef';
+      }
+
+      resultado.innerHTML = mensaje;
+      resultado.style.display = 'block';
+      resultado.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Inicializar al cargar la página
+    window.onload = crearFormulario;
+  </script>
 </body>
+
 </html>
