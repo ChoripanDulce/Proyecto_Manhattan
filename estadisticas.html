@@ -38,7 +38,7 @@
 
     .texto-overlay {
       position: absolute;
-      top: 10%; 
+      top: 10%;
       left: 50%;
       transform: translate(-50%, 0);
       color: white;
@@ -50,6 +50,32 @@
     .navbar-custom {
       background-color: white;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .Titulo-autores {
+      text-align: center;
+      position: relative;
+    }
+
+    .img-foo {
+      max-width: 55%;
+      display: grid;
+      justify-content: flex-end;
+    }
+
+    .img-foo2 {
+      max-width: 70%;
+      display: flexbox;
+      justify-content: flex-end;
+    }
+
+    .Copyright {
+      text-align: center;
+    }
+
+    .Josemiel {
+      background-color: #e2e8e9 !important;
+
     }
   </style>
 </head>
@@ -98,11 +124,50 @@
     </section>
   </main>
 
-  <footer class="Josemiel background-color #727579">
-    <h2 class="footer">"Aqui va el footer"</h2>
-    <h4 class="Autores fw-bold mb-3">Juan Manuel Torres Villota <br> Julian Andres Bedoya Toro <br> Mateo Crespo Ciro
-    </h4>
-    <h5 class="Copyright fw-bold mb-3">&copy; 2025 Red Comunitaria/Talento Tech</h5>
+  <footer class=" Josemiel">
+    <div class="row">
+
+      <h5 class="Titulo-autores fw-bold my-3">Autores:</h5>
+
+      <div class="col-md-2">
+        <h5 class="Autores">Juan Manuel Torres Villota</h5>
+        <i class="fa-brands fa-instagram target blank"> </i>
+        <a href="https://www.instagram.com/chopan_dulce/" target="_blank" class="text-dark">instagram</a> <br>
+        <i class="fa-brands fa-github"></i>
+        <a href="https://github.com/ChoripanDulce" target="_blank" class="text-dark">Github</a>
+      </div>
+
+      <div class="col-md-2">
+        <h5 class="Autores2">Julian Andres Bedoya Toro</h5>
+        <i class="fa-brands fa-instagram target blank"> </i>
+        <a href="https://www.instagram.com/jab_toro/?utm_source=qr" target="_blank" class="text-dark">instagram</a> <br>
+        <i class="fa-brands fa-github"></i>
+        <a href="https://github.com/jabToro" target="_blank" class="text-dark">Github</a>
+      </div>
+
+      <div class="col-md-2">
+        <h5 class="Autores2">Mateo Restrepo Ciro</h5>
+        <i class="fa-brands fa-instagram target blank"> </i>
+        <a href="https://www.instagram.com/matxxrc/" target="_blank" class="text-dark">instagram</a> <br>
+        <i class="fa-brands fa-github"></i>
+        <a href="https://github.com/MateoRc10" target="_blank" class="text-dark">Github</a>
+      </div>
+
+      <div class="col-md-2">
+        <img src="favicon.png" alt="Talento Tech" class="img-fluid img-foo" />
+      </div>
+
+      <div class="col-md-2">
+        <img src="image-removebg-preview.png" alt="Universidad de caldas" class="img-fluid img-foo2" />
+      </div>
+
+
+      <h6 class="Copyright fw-bold mt-5"><br> &copy;2025 Red Comunitaria de emprendimiento/<a
+          href="https://talentotech2.com.co/" target="_blank" class="text-dark">Talento Tech</a></h6>
+
+
+    </div>
+
   </footer>
 
   <!-- Bootstrap JS -->
