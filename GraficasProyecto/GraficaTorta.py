@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
+from matplotlib.animation import FuncAnimation, PillowWriter
 
 datos = pd.read_csv('antojitos-para-todos.csv', sep=';')
 
@@ -32,9 +32,9 @@ ani = FuncAnimation(
     fig,
     update,
     frames=len(conteo_final),
-    interval=1000,
+    interval=3000,
     repeat=False
 )
 
-plt.tight_layout()
+ani.save("GraficaTorta.gif", writer=PillowWriter(fps=10))
 plt.show()
