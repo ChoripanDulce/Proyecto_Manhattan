@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import numpy as np
+from matplotlib.animation import PillowWriter
 
 # Cargar los datos desde el archivo CSV
 df = pd.read_csv("US_FTRI_20230628035959.csv")  # Reemplaza con el nombre correcto de tu archivo
@@ -38,7 +39,7 @@ def update(frame):
     line.set_data(df_grouped["Year"][:idx], df_grouped["Index"][:idx])
     return line,
 
-# Crear animación con transiciones suaves y en bucle
-ani = animation.FuncAnimation(fig, update, frames=np.arange(1, len(df_grouped) * 2), interval=260, repeat=True)
-
-plt.show()
+# Crear animación y guardarla como GIF
+ani = animation.FuncAnimation(fig, update, frames=np.arange(1, len(df_grouped) + 1), interval=260, repeat=False)
+ani.save('GraficoLineas.gif', writer=PillowWriter(fps=2))
+plt.close()

@@ -77,14 +77,25 @@
       background-color: #e2e8e9 !important;
 
     }
-    .img-fluid{
+
+    .img-fluid {
       max-width: 80%;
       display: grid;
       justify-content: flex-end;
       border-radius: 10px;
     }
-    .img-fluid2{
+
+    .img-fluid2 {
       max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .img-fluid3 {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .img-fluid4{
+      max-width: 80%;
       border-radius: 10px;
     }
   </style>
@@ -98,7 +109,7 @@
         <div class="nav-item d-flex align-items-center">
           <img src="Logo.png" alt="Logo" class="logo me-2" />
           <a class="navbar-brand text-dark me-4 mx-3" href="index.html">Inicio</a>
-          <!-- Nueva sección de enlaces -->
+          <!-- Nueva seccion de enlaces -->
           <ul class="navbar-nav flex-row">
             <li class="nav-item d-flex align-items-center">
               <a class="nav-link text-dark me-4 mx-2" href="informacion.html">Información</a>
@@ -118,7 +129,8 @@
   <!-- Contenido principal -->
   <main>
     <section class="contenedor-imagen">
-      <img src="WhatsApp Image 2025-05-21 at 7.37.54 AM.jpeg" alt="Fondo formulario" class="img-fluid3" width="100%"/>
+      <img src="WhatsApp Image 2025-05-21 at 7.37.54 AM.jpeg" alt="Fondo formulario" class="img-fluid-imagen"
+        width="100%" height="50%" />
       <div class="overlay"></div>
 
       <div class="texto-overlay">
@@ -126,28 +138,35 @@
 
         <div class="container my-5">
           <div class="row">
-            <!-- Columna izquierda: gráfica actual -->
+            <!-- Columna izquierda: grafica actual -->
             <div class="col-md-6 mb-4 d-flex flex-column align-items-center">
               <h3 class="text-light">
-                Gráfico emprendimiento de la mujer a nivel mundial
+                Grafico emprendimiento de la mujer a nivel mundial
               </h3>
-              <img src="GraficoBarras.gif" alt="Gráfico animado de emprendimiento femenino" class="img-fluid2">
+              <img src="GraficoBarras.gif" alt="Grafico animado de emprendimiento femenino" class="img-fluid2">
             </div>
             <!-- Columna derecha: espacio para otras gráficas -->
             <div class="col-md-6 mb-4 d-flex flex-column align-items-center">
               <h3 class="text-light">
                 Crecimineto del emprendimiento: Antojitos para todos
               </h3>
-              <img src="GraficaTorta.gif" alt="Gráfico animado de emprendimiento femenino" class="img-fluid">
+              <img src="GraficaTorta.gif" alt="Grafico animado de emprendimiento femenino" class="img-fluid">
             </div>
           </div>
-          <!-- Fila inferior de gráficas -->
+          <!-- Fila inferior de graficas -->
           <div class="row mt-4">
             <div class="col-md-6 mb-4 d-flex flex-column align-items-center">
-              <!-- Espacio para gráfica inferior izquierda -->
+              <h3 class="text-light">
+                Comparación del emprendimiento e innovación
+              </h3>
+              <img src="GraficoArea.gif" alt="Grafico animado de emprendimiento femenino" class="img-fluid3">
             </div>
+            <!-- Grafica inferior derecha -->
             <div class="col-md-6 mb-4 d-flex flex-column align-items-center">
-              <!-- Espacio para gráfica inferior derecha -->
+              <h3 class="text-light">
+                Cambios de la innovación a nivel mundial
+              </h3>
+              <img src="GraficoLineas.gif" alt="Grafico animado de emprendimiento femenino" class="img-fluid4">
             </div>
           </div>
         </div>
