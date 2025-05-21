@@ -20,5 +20,5 @@ def animate(i):
 anim = FuncAnimation(fig, animate, frames=len(df), interval=700, repeat=False)
 
 # Guardar como GIF
-anim.save("GraficoBarras.gif", writer=PillowWriter(fps=10))
+anim.save("GraficoBarras.gif", writer=PillowWriter(fps=4))
 plt.close()

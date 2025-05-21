@@ -32,9 +32,9 @@ ani = FuncAnimation(
     fig,
     update,
     frames=len(conteo_final),
-    interval=3000,
+    interval=1000,
     repeat=False
 )
 
-ani.save("GraficaTorta.gif", writer=PillowWriter(fps=10))
+ani.save("GraficaTorta.gif", writer=PillowWriter(fps=2))
 plt.show()
